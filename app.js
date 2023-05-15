@@ -1,5 +1,5 @@
 import React from "react";
-import reactDOM from "react-dom/client"
+import ReactDOM from "react-dom/client"
 import AppLayout from "./src/AppLayout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"))

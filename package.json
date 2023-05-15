@@ -4,7 +4,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "parcel": "^2.8.3"
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
   },
   "name": "age-calculator-app-main",
   "description": "![Design preview for the Age calculator app coding challenge](./design/desktop-preview.jpg)",
@@ -13,7 +14,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
     "build": "parcel build index.html"
-
   },
   "repository": {
     "type": "git",
