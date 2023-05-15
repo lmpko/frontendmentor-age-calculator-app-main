@@ -2,13 +2,13 @@ import React from 'react'
 
 const DateFormCompononet = () => {
   return (
-    <form className='date-form'>
+    <form className='date-form container'>
       <label for="day">
         <input type="date" name="" value="" id='day' placeholder='DD'/>
       </label>
 
       <label for="month">
-        <input type="month" name="" value="" id='month' placeholder='MM'/>
+        <input type="date" name="" value="" id='month' placeholder='MM'/>
       </label>
 
       <label for="year">

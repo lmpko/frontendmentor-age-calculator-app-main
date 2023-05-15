@@ -2,19 +2,16 @@ import React from 'react'
 
 const ShowComponent = () => {
   return (
-    <div>
-      <div>
-        <span>--</span>
+    <div className='container'>
+      <div className='results-container'>
         <span>--</span>
         <p>years</p>
       </div>
-      <div>
-        <span>--</span>
+      <div className='results-container'>
         <span>--</span>
         <p>months</p>
       </div>
-      <div>
-        <span>--</span>
+      <div className='results-container'>
         <span>--</span>
         <p>days</p>
       </div>
