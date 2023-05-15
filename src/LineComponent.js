@@ -3,7 +3,8 @@ import arrowIMG from "/assets/images/icon-arrow.svg"
 
 const LineComponent = () => {
   return (
-    <div>
+    <div className='line-with-img'>
+      <hr/>
       <img src={arrowIMG} alt="arrow-icon"/>
     </div>
   )

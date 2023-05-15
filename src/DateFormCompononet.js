@@ -2,7 +2,7 @@ import React from 'react'
 
 const DateFormCompononet = () => {
   return (
-    <form>
+    <form className='date-form'>
       <label for="day">
         <input type="date" name="" value="" id='day' placeholder='DD'/>
       </label>
@@ -12,7 +12,7 @@ const DateFormCompononet = () => {
       </label>
 
       <label for="year">
-        <input type="year" name="" value="" id='year' placeholder='YYYY'/>
+        <input type="date" name="" value="" id='year' placeholder='YYYY'/>
       </label>
     </form>
   )
