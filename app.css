@@ -19,18 +19,32 @@ body{
 }
 
 input{
-    font-size: 32px;
+    font-size: 1.25rem;
+    padding: .9375rem.3125rem ;
 }
 
 main{
     background-color: var(--tertiary-color);
     margin: .9375rem;
-    padding: .9375rem;
+    padding: 3.125rem .9375rem;
     border-radius: 1.5625rem 1.5625rem 6.25rem 1.5625rem  ;
 }
 
+.date-form label{
+   color: var(--fifthary-color);
+   text-transform: uppercase;
+   display: flex;
+   flex-direction: column;
+}
+
 .date-form{
-   
+    display: flex;
+}
+.date-form input{
+    width: 5rem;
+    margin-right: .9375rem;
+    border: 1px solid var(--fouthary-color);
+    border-radius: .3125rem;
 }
 
 .line-with-img{
