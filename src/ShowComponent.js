@@ -2,7 +2,7 @@ import React from 'react'
 
 const ShowComponent = () => {
   return (
-    <div className='container'>
+    <div>
       <div className='results-container'>
         <span>--</span>
         <p>years</p>

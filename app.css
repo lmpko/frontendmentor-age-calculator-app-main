@@ -25,15 +25,12 @@ input{
 main{
     background-color: var(--tertiary-color);
     margin: .9375rem;
+    padding: .9375rem;
     border-radius: 1.5625rem 1.5625rem 6.25rem 1.5625rem  ;
 }
 
 .date-form{
    
-}
-
-.container{
-    padding: 1.875rem;
 }
 
 .line-with-img{
