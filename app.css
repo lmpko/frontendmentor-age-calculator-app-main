@@ -80,3 +80,18 @@ main{
 .results-container span{
     color: var(--primary-color);
 }
+
+@media screen and (min-width: 768px){
+    main{
+        width: 31.25rem ;
+        padding: 3.125rem;
+    }
+
+    .line-with-img{
+        text-align: right;
+    }
+
+    .date-form input{
+        width: 6rem;
+    }
+}
