@@ -1,0 +1,18 @@
+:root{
+    --primary-color: hsl(259, 100%, 65%);
+    --secondary-color: hsl(0, 100%, 67%);
+
+    --tertiary-color: hsl(0, 0%, 94%);
+    --fouthary-color: hsl(0, 0%, 86%);
+    --fifthary-color: hsl(0, 1%, 44%);
+    --sixthary-color: hsl(0, 0%, 8%);
+}
+
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+input{
+    font-size: 32px;
+}
