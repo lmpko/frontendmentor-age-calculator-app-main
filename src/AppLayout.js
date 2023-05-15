@@ -1,8 +1,15 @@
 import React from 'react'
+import DateFormCompononet from './DateFormCompononet'
+import LineComponent from "./LineComponent"
+import ShowComponent from "./ShowComponent"
 
 const AppLayout = () => {
   return (
-    <div>AppLayout</div>
+    <>
+        <DateFormCompononet/>
+        <LineComponent />
+        <ShowComponent />
+    </>
   )
 }
 
