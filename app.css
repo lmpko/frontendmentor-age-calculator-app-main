@@ -66,7 +66,7 @@ main{
 
 .date-form input:focus,
 .date-form input:hover{
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
     outline: none;
     cursor: pointer;
 }
@@ -111,6 +111,23 @@ main{
 
 .results-container span{
     color: var(--primary-color);
+}
+
+.error{
+    color: var(--secondary-color);
+    font-size: 0.6rem;
+    font-weight: 300;
+    text-transform: lowercase;
+    padding-top: .3125rem ;
+}
+
+.date-form .is-invalid{
+    border: 1px solid var(--secondary-color);
+    
+}
+
+.date-form .invalid{
+    color: var(--secondary-color);
 }
 
 @media screen and (min-width: 768px){
