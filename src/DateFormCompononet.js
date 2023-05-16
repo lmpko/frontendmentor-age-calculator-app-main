@@ -35,8 +35,10 @@ const DateFormCompononet = () => {
     event.preventDefault();
 
     setSubmitted(true);
-
-    calculateAge(actualDay, actualMonth, actualYear, day, month, year);
+    
+    if (day && month && year && parseInt(day, 10) <= moment(`${year}-${month}`, 'YYYY-M').daysInMonth() && parseInt(month, 10) <= 12 && parseInt(year, 10) <= parseInt(actualYear, 10)) {
+      calculateAge(actualDay, actualMonth, actualYear, day, month, year);
+    }
   };
 
   function calculateAge(actualD, actualM, actualY, submittedD, submittedM, submittedY) {
@@ -69,7 +71,7 @@ const DateFormCompononet = () => {
             parseInt(day, 10) > moment(`${year}-${month}`, 'YYYY-M').daysInMonth() && submitted ? 'is-invalid' : ''} />
 
           {!day && submitted && <span className="error">This field is required</span>}
-          {parseInt(day, 10) > moment(`${year}-${month}`, 'YYYY-M').daysInMonth() && <span className='error'>Must be a valid day</span>}
+          {parseInt(day, 10) > moment(`${year}-${month}`, 'YYYY-M').daysInMonth() && submitted && <span className='error'>Must be a valid day</span>}
         </label>
         
 
@@ -81,7 +83,7 @@ const DateFormCompononet = () => {
             className={!month && submitted ? 'is-invalid' : '' || parseInt(month, 10) > 12 && submitted ? 'is-invalid' : ''}/>
 
             {!month && submitted && <span className="error">This field is required</span>}
-            {parseInt(month, 10) > 12 && <span className='error'>Must be a valid month</span>}
+            {parseInt(month, 10) > 12 && submitted && <span className='error'>Must be a valid month</span>}
         </label>
 
         <label htmlFor="year" className={!year && submitted ? 'invalid' : '' || parseInt(year, 10) > parseInt(actualYear, 10) && submitted ? 'invalid' : ''}>
@@ -92,7 +94,7 @@ const DateFormCompononet = () => {
             className={!year && submitted ? 'is-invalid' : '' || parseInt(year, 10) > parseInt(actualYear, 10) && submitted ? 'is-invalid' : ''} />
 
             {!year && submitted && <span className="error">This field is required</span>}
-            {parseInt(year, 10) > parseInt(actualYear, 10) && <span className='error'>Must be in the past</span>}
+            {parseInt(year, 10) > parseInt(actualYear, 10) && submitted && <span className='error'>Must be in the past</span>}
         </label>
         
         <div className='line-with-img'>
@@ -104,7 +106,8 @@ const DateFormCompononet = () => {
       </form>
       <ShowComponent calculatedAge={calculatedAge}
                       calculatedDay={calculatedDay}
-                      calculatedMonth={calculatedMonth}/>
+                      calculatedMonth={calculatedMonth}
+                     />
     </>
     
   )
