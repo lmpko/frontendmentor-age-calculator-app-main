@@ -35,23 +35,31 @@ const DateFormCompononet = () => {
     event.preventDefault();
 
     setSubmitted(true);
-    
+
     if (day && month && year && parseInt(day, 10) <= moment(`${year}-${month}`, 'YYYY-M').daysInMonth() && parseInt(month, 10) <= 12 && parseInt(year, 10) <= parseInt(actualYear, 10)) {
       calculateAge(actualDay, actualMonth, actualYear, day, month, year);
     }
   };
 
   function calculateAge(actualD, actualM, actualY, submittedD, submittedM, submittedY) {
-    const parsedActualD = parseInt(actualD, 10);
-    const parsedActualM = parseInt(actualM, 10);
-    const parsedActualY = parseInt(actualY, 10);
-    const parsedSubmittedD = parseInt(submittedD, 10);
-    const parsedSubmittedM = parseInt(submittedM, 10);
-    const parsedSubmittedY = parseInt(submittedY, 10);
+    
+    let calculatedAge = actualY- submittedY;
+    let calculatedMonth = actualM - submittedM;
+    let calculatedDay = actualD - submittedD;
 
-    setCalculatedAge(parsedActualY - parsedSubmittedY);
-    setCalculatedMonth(parsedActualM - parsedSubmittedM);
-    setCalculatedDay(parsedActualD - parsedSubmittedD);
+    if (calculatedMonth < 0 ){
+        calculatedMonth += 12;
+        calculatedAge -= 1; 
+    }
+
+    if(calculatedDay < 0){
+      calculatedMonth -= 1;
+      calculatedDay += moment(`${submittedY}-${submittedM}`, 'YYYY-M').daysInMonth();
+    }
+
+    setCalculatedAge(Math.max(0, calculatedAge));
+    setCalculatedMonth(Math.max(0 ,calculatedMonth));
+    setCalculatedDay(Math.max(0,calculatedDay));
   }
 
 
@@ -107,7 +115,7 @@ const DateFormCompononet = () => {
       <ShowComponent calculatedAge={calculatedAge}
                       calculatedDay={calculatedDay}
                       calculatedMonth={calculatedMonth}
-                     />
+                    />
     </>
     
   )

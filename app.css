@@ -101,6 +101,7 @@ main{
     display: flex;
     align-items: center;
     font-size: 32px;
+    line-height: 1;
 }
 
 .results-container p{
@@ -119,6 +120,11 @@ main{
     font-weight: 300;
     text-transform: lowercase;
     padding-top: .3125rem ;
+    
+}
+
+.error::first-letter{
+    text-transform: capitalize;
 }
 
 .date-form .is-invalid{
@@ -142,5 +148,9 @@ main{
 
     .date-form input{
         width: 6rem;
+    }
+
+    .results-container{
+        font-size: 62px;
     }
 }
