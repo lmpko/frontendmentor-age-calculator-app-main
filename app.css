@@ -11,7 +11,7 @@
 body{
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: var(--fouthary-color);
+    background-color: var(--tertiary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@ input[type="number"] {
 }
 
 main{
-    background-color: var(--tertiary-color);
+    background-color: white;
     margin: .9375rem;
     padding: 3.125rem .9375rem;
     border-radius: 1.5625rem 1.5625rem 6.25rem 1.5625rem  ;
@@ -138,7 +138,7 @@ main{
 
 @media screen and (min-width: 768px){
     main{
-        width: 31.25rem ;
+        width: 37.25rem ;
         padding: 3.125rem;
     }
 
@@ -151,6 +151,6 @@ main{
     }
 
     .results-container{
-        font-size: 62px;
+        font-size: 92px;
     }
 }
