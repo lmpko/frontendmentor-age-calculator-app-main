@@ -1,18 +1,18 @@
 import React from 'react'
 
-const ShowComponent = () => {
+const ShowComponent = ({calculatedAge, calculatedMonth, calculatedDay}) => {
   return (
     <div>
       <div className='results-container'>
-        <span>--</span>
+        <span> {calculatedAge === ''  ?  '--' : calculatedAge}</span>
         <p>years</p>
       </div>
       <div className='results-container'>
-        <span>--</span>
+        <span>{calculatedMonth === ''  ?  '--' : calculatedMonth}</span>
         <p>months</p>
       </div>
       <div className='results-container'>
-        <span>--</span>
+        <span>{calculatedDay === ''  ?  '--' : calculatedDay}</span>
         <p>days</p>
       </div>
     </div>
