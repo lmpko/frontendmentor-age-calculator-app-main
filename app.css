@@ -64,9 +64,11 @@ main{
     border-radius: .3125rem;
 }
 
-.date-form input:focus{
+.date-form input:focus,
+.date-form input:hover{
     border: 2px solid var(--primary-color);
     outline: none;
+    cursor: pointer;
 }
 
 .line-with-img{

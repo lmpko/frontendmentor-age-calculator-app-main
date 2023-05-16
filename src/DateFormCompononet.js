@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
 import arrowIMG from "/assets/images/icon-arrow.svg"
-import Moment from 'moment';
+import moment from 'moment';
 
 
 const DateFormCompononet = () => {
-  const actualDate = Moment().format('DD-MM-YYYY')
-  const actualYear = Moment().format('YYYY')
-  const actualMonth = Moment().format('MM')
-  const actualDay = Moment().format('DD')
+  const actualDate = moment().format('DD-MM-YYYY')
+  const actualYear = moment().format('YYYY')
+  const actualMonth = moment().format('MM')
+  const actualDay = moment().format('DD')
 
   const [day, setDay] = useState('')
   const [month, setMonth] = useState('')
   const [year, setYear] = useState('')
+
+  const [calculatedAge, setCalculatedAge] = useState(0)
+  const [calculatedMonth, setCaculatedMonth] = useState('')
+  const [calculatedDay, setCaculatedDay] = useState('')
   
   const handleDay = (event) => {
     setDay(event.target.value);
@@ -32,12 +36,28 @@ const DateFormCompononet = () => {
 
   function calculateAge(actualD, actualM, actualY, submittedD, submittedM, submittedY){
     console.log("calculated age", actualD, actualM, actualY, submittedD, submittedM, submittedY)
+    setCalculatedAge(actualY - submittedY) 
+    setCaculatedMonth(actualM - submittedM)
+    setCaculatedDay(actualD - submittedD)
+
+    if (calculatedMonth < 0 || (calculatedMonth === 0 && calculatedDay < 0)) {
+      setCalculatedAge(prevAge => prevAge - 1);
+      setCaculatedMonth(prevMonth => prevMonth + 12);
+    }
+    
+    if (calculatedDay < 0) {
+      const lastMonthDays = moment(actualY + "-" + actualM, "YYYY-MM").daysInMonth();
+      setCaculatedDay(lastMonthDays - submittedD + actualD);
+      setCaculatedMonth(prevMonth => prevMonth - 1);
+    }
   }
 
 
   return (
     <form className='date-form' onSubmit={handleSubmit}>
-      {actualDate}
+      {calculatedAge + " "}
+      {calculatedMonth +" "}
+      {calculatedDay}
       <label htmlFor="day">
         day
         <input type="number" name="day" value={day} onChange={handleDay}
