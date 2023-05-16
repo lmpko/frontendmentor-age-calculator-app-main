@@ -21,6 +21,8 @@ body{
 input{
     font-size: 1.25rem;
     padding: .9375rem.3125rem ;
+    font-weight: 700;
+    color: var(--sixthary-color);
 }
 
 main{
@@ -38,7 +40,12 @@ main{
 }
 
 .date-form{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-areas: 
+    ". . . . "
+    "btn btn btn btn";
 }
 .date-form input{
     width: 5rem;
@@ -50,14 +57,22 @@ main{
 .line-with-img{
     text-align: center;
     padding-top: 3.125rem;
+    grid-area: btn;
 }
 
-.line-with-img img{
+.line-with-img button{
     position: relative;
     top: -2.875rem ;
     background-color: var(--primary-color);
     border-radius: 50%;
     padding: .9375rem;
+    border: none;
+    cursor: pointer;
+}
+
+.line-with-img button:hover,
+.line-with-img button:focus{
+    background-color: var(--sixthary-color);
 }
 
 .line-with-img hr{
