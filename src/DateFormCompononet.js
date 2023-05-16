@@ -84,15 +84,15 @@ const DateFormCompononet = () => {
             {parseInt(month, 10) > 12 && <span className='error'>Must be a valid month</span>}
         </label>
 
-        <label htmlFor="year" className={!year && submitted ? 'invalid' : '' || parseInt(year, 10) > actualYear && submitted ? 'invalid' : ''}>
+        <label htmlFor="year" className={!year && submitted ? 'invalid' : '' || parseInt(year, 10) > parseInt(actualYear, 10) && submitted ? 'invalid' : ''}>
           year
           <input type="number" name="year"  value={year} onChange={handleYear} 
             id='year' placeholder='YYYY'
             step="1" min="0" 
-            className={!year && submitted ? 'is-invalid' : '' || parseInt(year, 10) > actualYear && submitted ? 'is-invalid' : ''} />
+            className={!year && submitted ? 'is-invalid' : '' || parseInt(year, 10) > parseInt(actualYear, 10) && submitted ? 'is-invalid' : ''} />
 
             {!year && submitted && <span className="error">This field is required</span>}
-            {parseInt(year, 10) > actualYear && <span className='error'>Must be in the past</span>}
+            {parseInt(year, 10) > parseInt(actualYear, 10) && <span className='error'>Must be in the past</span>}
         </label>
         
         <div className='line-with-img'>
