@@ -25,6 +25,16 @@ input{
     color: var(--sixthary-color);
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 main{
     background-color: var(--tertiary-color);
     margin: .9375rem;
@@ -52,6 +62,11 @@ main{
     margin-right: .9375rem;
     border: 1px solid var(--fouthary-color);
     border-radius: .3125rem;
+}
+
+.date-form input:focus{
+    border: 2px solid var(--primary-color);
+    outline: none;
 }
 
 .line-with-img{
